@@ -100,7 +100,7 @@ if(!isset($_SESSION['name']))
 			document.getElementById('opt4').checked=false;
 		}
 		else {alert("Choose an answer");}
-		//timer();
+		timer();
 		document.getElementById("header").innerHTML = id;
 		$(document).ready(function(){
 		$.ajax({
@@ -118,28 +118,28 @@ if(!isset($_SESSION['name']))
 		}
 		})
 	});}
-	// function startTimer(duration, display) {
-    // var timer = duration, minutes, seconds;
-    // setInterval(function () {
-       // seconds = timer;
+	 function startTimer(duration, display) {
+     var timer = duration, minutes, seconds;
+     setInterval(function () {
+        seconds = timer;
 
-        // seconds = seconds < 10 ? "0" + seconds : seconds;
+         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        // display.textContent = "Time Left: 00:00:" + seconds;
+         display.textContent = "Time Left: 00:00:" + seconds;
 
-        // if (--timer < 0) {
-			// display.textContent = "";
-		  // }
-    // }, 1000);
-// }
-	// function timer(){
-		// var fiveMinutes = 60,
-        // display = document.querySelector('#time');
-		// startTimer(fiveMinutes, display);
-	// }
+        if (--timer < 0) {
+			 display.textContent = "";
+		   }
+     }, 1000);
+}
+	 function timer(){
+	 var fiveMinutes = 60,
+         display = document.querySelector('#time');
+		 startTimer(fiveMinutes, display);
+	 }
 window.onload = function () {
 	Question();
-	//timer();
+	timer();
 }
 	function Question(){
 		$(document).ready(function(){
